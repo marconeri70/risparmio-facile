@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+}
+
+.container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+#budgetValue {
+  font-size: 40px;
+  font-weight: bold;
+  color: #22c55e;
+}
+
+.spesa-item {
+  background: rgba(255,255,255,0.05);
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
