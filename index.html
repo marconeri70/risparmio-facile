@@ -2,70 +2,120 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Risparmio Facile</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
 
-  <div class="container">
+  <main class="app">
 
-    <header>
+    <header class="hero">
       <h1>💰 Risparmio Facile</h1>
-      <p>Controlla le tue spese automaticamente</p>
+      <p>Controlla automaticamente le tue spese</p>
     </header>
 
-    <div class="card saldo-card">
-      <h2>Budget Mensile</h2>
-      <div id="budgetValue">0 €</div>
-    </div>
+    <section class="stats">
 
-    <div class="card">
-      <h2>Inserisci Stipendio</h2>
+      <div class="card">
+        <span>Entrate</span>
+        <strong id="totEntrate">0 €</strong>
+      </div>
 
-      <input type="number" id="stipendio" placeholder="Es. 1800" />
+      <div class="card">
+        <span>Uscite</span>
+        <strong id="totUscite">0 €</strong>
+      </div>
 
-      <button onclick="salvaStipendio()">
-        Salva Stipendio
+      <div class="card">
+        <span>Risparmio</span>
+        <strong id="totRisparmio">0 €</strong>
+      </div>
+
+      <div class="card">
+        <span>Budget Settimanale</span>
+        <strong id="budgetSettimanale">0 €</strong>
+      </div>
+
+    </section>
+
+    <section class="card">
+
+      <h2>Impostazioni Budget</h2>
+
+      <input type="number" id="stipendio" placeholder="Stipendio mensile">
+
+      <input type="number" id="obiettivo" placeholder="Obiettivo risparmio">
+
+      <button onclick="salvaImpostazioni()">
+        Salva
       </button>
-    </div>
 
-    <div class="card">
-      <h2>Aggiungi Spesa</h2>
+    </section>
 
-      <input type="text" id="descrizione" placeholder="Descrizione" />
+    <section class="card">
 
-      <input type="number" id="importo" placeholder="Importo" />
+      <h2>Importa Estratto Conto CSV</h2>
+
+      <input type="file" id="csvFile" accept=".csv">
+
+      <button onclick="importaCSV()">
+        Importa CSV
+      </button>
+
+    </section>
+
+    <section class="card">
+
+      <h2>Aggiungi Movimento</h2>
+
+      <input type="date" id="dataMov">
+
+      <input type="text" id="descrizione" placeholder="Descrizione">
+
+      <input type="number" id="importo" placeholder="Importo">
 
       <select id="categoria">
         <option>Spesa</option>
         <option>Benzina</option>
         <option>Bollette</option>
-        <option>Ristorante</option>
         <option>Shopping</option>
+        <option>Ristorante</option>
+        <option>Abbonamenti</option>
+        <option>Entrate</option>
         <option>Altro</option>
       </select>
 
-      <button onclick="aggiungiSpesa()">
-        Aggiungi
+      <button onclick="aggiungiMovimento()">
+        Aggiungi Movimento
       </button>
-    </div>
 
-    <div class="card">
+    </section>
+
+    <section class="card">
+
       <h2>Grafico Spese</h2>
-      <canvas id="grafico"></canvas>
-    </div>
 
-    <div class="card">
-      <h2>Lista Spese</h2>
-      <div id="listaSpese"></div>
-    </div>
+      <canvas id="graficoCategorie"></canvas>
 
-  </div>
+    </section>
+
+    <section class="card">
+
+      <h2>Movimenti</h2>
+
+      <div id="listaMovimenti"></div>
+
+    </section>
+
+  </main>
 
   <script src="app.js"></script>
+
 </body>
 </html>
