@@ -6,7 +6,7 @@
 
 body{
   font-family:Arial,sans-serif;
-  background:#0f172a;
+  background:radial-gradient(circle at top,#1e3a8a,#0f172a 45%,#020617);
   color:white;
 }
 
@@ -19,6 +19,7 @@ body{
 .hero{
   text-align:center;
   margin-bottom:20px;
+  padding:20px 0;
 }
 
 .hero h1{
@@ -39,10 +40,12 @@ body{
 
 .card{
   background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.12);
   border-radius:20px;
   padding:20px;
   margin-bottom:20px;
   backdrop-filter:blur(10px);
+  box-shadow:0 20px 50px rgba(0,0,0,0.25);
 }
 
 .card span{
@@ -54,6 +57,29 @@ body{
 .card strong{
   font-size:28px;
   color:#22c55e;
+}
+
+.info{
+  color:#cbd5e1;
+  margin-bottom:10px;
+}
+
+.separatore{
+  height:1px;
+  background:rgba(255,255,255,0.15);
+  margin:20px 0;
+}
+
+.semaforo{
+  border-left:6px solid #22c55e;
+}
+
+.semaforo.warning{
+  border-left-color:#f59e0b;
+}
+
+.semaforo.danger-alert{
+  border-left-color:#ef4444;
 }
 
 input,
@@ -74,7 +100,7 @@ button{
   margin-top:15px;
   border:none;
   border-radius:12px;
-  background:#2563eb;
+  background:linear-gradient(135deg,#2563eb,#06b6d4);
   color:white;
   font-size:16px;
   font-weight:bold;
@@ -85,7 +111,14 @@ button:hover{
   opacity:0.9;
 }
 
+button.danger{
+  background:#dc2626;
+}
+
 .movimento{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:10px;
   background:rgba(255,255,255,0.05);
   padding:14px;
   border-radius:12px;
@@ -103,10 +136,19 @@ button:hover{
 
 .positivo{
   color:#22c55e;
+  font-weight:bold;
 }
 
 .negativo{
   color:#ef4444;
+  font-weight:bold;
+}
+
+.elimina{
+  width:auto;
+  padding:8px 10px;
+  background:#7f1d1d;
+  font-size:13px;
 }
 
 canvas{
@@ -117,6 +159,10 @@ canvas{
 
   .hero h1{
     font-size:30px;
+  }
+
+  .movimento{
+    grid-template-columns:1fr;
   }
 
 }
