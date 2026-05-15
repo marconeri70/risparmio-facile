@@ -1,64 +1,122 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: white;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-.container {
-  padding: 20px;
-  max-width: 900px;
-  margin: auto;
+body{
+  font-family:Arial,sans-serif;
+  background:#0f172a;
+  color:white;
 }
 
-header {
-  text-align: center;
-  margin-bottom: 20px;
+.app{
+  max-width:1000px;
+  margin:auto;
+  padding:20px;
 }
 
-.card {
-  background: rgba(255,255,255,0.08);
-  border-radius: 20px;
-  padding: 20px;
-  margin-bottom: 20px;
-  backdrop-filter: blur(10px);
+.hero{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-size:40px;
+  margin-bottom:10px;
+}
+
+.hero p{
+  color:#cbd5e1;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+  margin-bottom:20px;
+}
+
+.card{
+  background:rgba(255,255,255,0.08);
+  border-radius:20px;
+  padding:20px;
+  margin-bottom:20px;
+  backdrop-filter:blur(10px);
+}
+
+.card span{
+  display:block;
+  color:#cbd5e1;
+  margin-bottom:10px;
+}
+
+.card strong{
+  font-size:28px;
+  color:#22c55e;
 }
 
 input,
-select {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  border-radius: 10px;
-  border: none;
-  font-size: 16px;
+select{
+  width:100%;
+  padding:14px;
+  margin-top:12px;
+  border:none;
+  border-radius:12px;
+  background:#1e293b;
+  color:white;
+  font-size:16px;
 }
 
-button {
-  width: 100%;
-  padding: 14px;
-  margin-top: 15px;
-  border: none;
-  border-radius: 12px;
-  background: #2563eb;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
+button{
+  width:100%;
+  padding:14px;
+  margin-top:15px;
+  border:none;
+  border-radius:12px;
+  background:#2563eb;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-button:hover {
-  opacity: 0.9;
+button:hover{
+  opacity:0.9;
 }
 
-#budgetValue {
-  font-size: 40px;
-  font-weight: bold;
-  color: #22c55e;
+.movimento{
+  background:rgba(255,255,255,0.05);
+  padding:14px;
+  border-radius:12px;
+  margin-top:10px;
 }
 
-.spesa-item {
-  background: rgba(255,255,255,0.05);
-  padding: 10px;
-  border-radius: 10px;
-  margin-top: 10px;
+.movimento strong{
+  color:white;
+  font-size:18px;
+}
+
+.movimento small{
+  color:#cbd5e1;
+}
+
+.positivo{
+  color:#22c55e;
+}
+
+.negativo{
+  color:#ef4444;
+}
+
+canvas{
+  margin-top:20px;
+}
+
+@media(max-width:700px){
+
+  .hero h1{
+    font-size:30px;
+  }
+
 }
