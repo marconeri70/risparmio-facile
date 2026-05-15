@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Risparmio Facile</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>💰 Risparmio Facile</h1>
+      <p>Controlla le tue spese automaticamente</p>
+    </header>
+
+    <div class="card saldo-card">
+      <h2>Budget Mensile</h2>
+      <div id="budgetValue">0 €</div>
+    </div>
+
+    <div class="card">
+      <h2>Inserisci Stipendio</h2>
+
+      <input type="number" id="stipendio" placeholder="Es. 1800" />
+
+      <button onclick="salvaStipendio()">
+        Salva Stipendio
+      </button>
+    </div>
+
+    <div class="card">
+      <h2>Aggiungi Spesa</h2>
+
+      <input type="text" id="descrizione" placeholder="Descrizione" />
+
+      <input type="number" id="importo" placeholder="Importo" />
+
+      <select id="categoria">
+        <option>Spesa</option>
+        <option>Benzina</option>
+        <option>Bollette</option>
+        <option>Ristorante</option>
+        <option>Shopping</option>
+        <option>Altro</option>
+      </select>
+
+      <button onclick="aggiungiSpesa()">
+        Aggiungi
+      </button>
+    </div>
+
+    <div class="card">
+      <h2>Grafico Spese</h2>
+      <canvas id="grafico"></canvas>
+    </div>
+
+    <div class="card">
+      <h2>Lista Spese</h2>
+      <div id="listaSpese"></div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
