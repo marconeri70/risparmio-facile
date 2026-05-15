@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="style.css">
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
 
 <body>
@@ -17,7 +18,7 @@
 
     <header class="hero">
       <h1>💰 Risparmio Facile</h1>
-      <p>Controlla automaticamente le tue spese</p>
+      <p>Controlla automaticamente le tue spese da CSV e PDF</p>
     </header>
 
     <section class="stats">
@@ -44,6 +45,11 @@
 
     </section>
 
+    <section class="card semaforo" id="semaforo">
+      <h2 id="semaforoTitolo">🟢 Situazione buona</h2>
+      <p id="semaforoTesto">Inserisci i dati o importa un estratto conto.</p>
+    </section>
+
     <section class="card">
 
       <h2>Impostazioni Budget</h2>
@@ -60,12 +66,24 @@
 
     <section class="card">
 
-      <h2>Importa Estratto Conto CSV</h2>
+      <h2>Importa Estratto Conto</h2>
 
-      <input type="file" id="csvFile" accept=".csv">
+      <p class="info">
+        Puoi importare un file CSV oppure un PDF della banca.
+      </p>
+
+      <input type="file" id="csvFile" accept=".csv,text/csv">
 
       <button onclick="importaCSV()">
         Importa CSV
+      </button>
+
+      <div class="separatore"></div>
+
+      <input type="file" id="pdfFile" accept=".pdf,application/pdf">
+
+      <button onclick="importaPDF()">
+        Importa PDF
       </button>
 
     </section>
@@ -78,7 +96,7 @@
 
       <input type="text" id="descrizione" placeholder="Descrizione">
 
-      <input type="number" id="importo" placeholder="Importo">
+      <input type="number" id="importo" placeholder="Importo negativo per spesa">
 
       <select id="categoria">
         <option>Spesa</option>
@@ -87,6 +105,7 @@
         <option>Shopping</option>
         <option>Ristorante</option>
         <option>Abbonamenti</option>
+        <option>Farmacia</option>
         <option>Entrate</option>
         <option>Altro</option>
       </select>
@@ -108,6 +127,10 @@
     <section class="card">
 
       <h2>Movimenti</h2>
+
+      <button class="danger" onclick="cancellaTutto()">
+        Cancella tutti i movimenti
+      </button>
 
       <div id="listaMovimenti"></div>
 
